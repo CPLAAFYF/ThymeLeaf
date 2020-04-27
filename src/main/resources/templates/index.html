@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Thymeleaf</title>
+</head>
+<body>
+<span th:text="叶凡"></span>
+
+<hr>
+<span th:text="${msg}"></span>
+
+<hr>
+<!--将一个值放入到input标签的value中-->
+<input th:value="${msg}">
+
+<hr>
+<span th:text="${#strings.isEmpty(msg)}"></span>
+<hr>
+<span th:text="${#dates.format(date)}"></span>
+<hr>
+<div th:text="${#dates.year(date)}"></div>
+<div th:text="${#dates.month(date)}"></div>
+<div th:text="${#dates.day(date)}"></div>
+<hr>
+
+<div>
+    <span th:if="${sex}=='男'">性别：男</span>
+    <span th:if="${sex}=='女'">性别：女</span>
+</div>
+<hr>
+
+<!--绝对路径-->
+<a th:href="@{http://www.baidu.com}">打开百度</a>
+<hr>
+
+<!--相对路径-->
+<a th:href="@{/index1}">打开controller</a>
+<hr>
+<!--参数传递方式-->
+<a th:href="@{/index1?id=1&name=yf}">参数传递1</a>
+<hr>
+<a th:href="@{/index1(id=2,name=yyt)}">参数传递2</a>
+<hr>
+<a th:href="@{'/index1?id='+${id}+'&name='+${name}}">参数传递3</a>
+<hr>
+<a th:href="@{/index1(id=${id},name=${name})}">参数传递4</a>
+<hr>
+
+</body>
+</html>

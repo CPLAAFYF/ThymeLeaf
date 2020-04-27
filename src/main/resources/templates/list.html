@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>迭代器</h1>
+<table border="1" width="50%">
+    <tr>
+        <th>ID</th>
+        <th>URL</th>
+        <th>NAME</th>
+    </tr>
+    <tr th:each="u:${list}">
+        <td th:text="${u.id}"></td>
+        <td th:text="${u.name}"></td>
+        <td th:text="${u.age}"></td>
+    </tr>
+</table>
+<hr>
+
+<h1>迭代器的状态变量</h1>
+<table border="1" width="50%">
+    <tr>
+        <th>ID</th>
+        <th>URL</th>
+        <th>NAME</th>
+        <th>Index</th>
+        <th>Count</th>
+        <th>Size</th>
+        <th>Odd</th>
+        <th>Even</th>
+        <th>First</th>
+        <th>Last</th>
+    </tr>
+    <tr th:each="u,suibian:${list}">
+        <td th:text="${u.id}"></td>
+        <td th:text="${u.name}"></td>
+        <td th:text="${u.age}"></td>
+        <td th:text="${suibian.index}"></td>
+        <td th:text="${suibian.count}"></td>
+        <td th:text="${suibian.size}"></td>
+        <td th:text="${suibian.odd}"></td>
+        <td th:text="${suibian.even}"></td>
+        <td th:text="${suibian.first}"></td>
+        <td th:text="${suibian.last}"></td>
+    </tr>
+</table>
+</body>
+</html>
